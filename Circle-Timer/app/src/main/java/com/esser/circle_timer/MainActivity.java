@@ -12,9 +12,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    //Declare Variables
+    private NumberPicker nP_Rounds=null;
+    private NumberPicker nP_WorkInterval = null;
+    private NumberPicker nP_PauseInterval=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Set NumberPicker Values
+        nP_Rounds=(NumberPicker)findViewById(R.id.nP_Rounds);
+        nP_WorkInterval = (NumberPicker)findViewById(R.id.nP_WorkInterval);
+        nP_PauseInterval=(NumberPicker)findViewById(R.id.nB_PauseInterval);
+        nP_Rounds.setMinValue(0);
+        nP_Rounds.setMaxValue(20);
+        nP_Rounds.setWrapSelectorWheel(false);
+        nP_WorkInterval.setMinValue(0);
+        nP_WorkInterval.setMaxValue(240);
+        nP_WorkInterval.setWrapSelectorWheel(false);
+        nP_PauseInterval.setMinValue(0);
+        nP_PauseInterval.setMaxValue(120);
+        nP_PauseInterval.setWrapSelectorWheel(false);
     }
 
     @Override
