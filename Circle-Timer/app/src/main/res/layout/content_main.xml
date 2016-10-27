@@ -27,7 +27,7 @@
             android:layout_height="106dp">
 
             <TextView
-                android:text="TextView"
+                android:text="@string/tV_Rounds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_Rounds"
@@ -46,7 +46,7 @@
             android:layout_height="106dp">
 
             <TextView
-                android:text="TextView"
+                android:text="@string/tV_IntervallTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_WorkInterval"
@@ -64,7 +64,7 @@
             android:layout_height="106dp">
 
             <TextView
-                android:text="TextView"
+                android:text="@string/tV_PauseTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_PauseInterval"

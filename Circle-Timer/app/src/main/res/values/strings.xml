@@ -5,4 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    //Strings for Main Activity
+    <string name="tV_Rounds">Rounds:</string>
+    <string name="tV_IntervallTime">Intervall Time:</string>
+    <string name="tV_PauseTime">Pause Time:</string>
 </resources>
