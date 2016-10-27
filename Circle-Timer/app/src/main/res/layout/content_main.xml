@@ -16,17 +16,65 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="106dp"></LinearLayout>
+            android:layout_height="106dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textAlignment="center" />
+
+            <NumberPicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberPicker2" />
+
+        </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="106dp"></LinearLayout>
+            android:layout_height="106dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:textAlignment="center" />
+
+            <NumberPicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberPicker3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="106dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textAlignment="center" />
+
+            <NumberPicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberPicker4" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -35,9 +83,5 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="126dp"></LinearLayout>
     </LinearLayout>
 </RelativeLayout>
