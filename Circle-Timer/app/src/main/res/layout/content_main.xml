@@ -30,13 +30,13 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3"
+                android:id="@+id/tV_Rounds"
                 android:textAlignment="center" />
 
             <NumberPicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/numberPicker2" />
+                android:id="@+id/nP_Rounds" />
 
         </LinearLayout>
 
@@ -49,13 +49,13 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
+                android:id="@+id/tV_WorkInterval"
                 android:textAlignment="center" />
 
             <NumberPicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/numberPicker3" />
+                android:id="@+id/nP_WorkInterval" />
         </LinearLayout>
 
         <LinearLayout
@@ -67,13 +67,13 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5"
+                android:id="@+id/tV_PauseInterval"
                 android:textAlignment="center" />
 
             <NumberPicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/numberPicker4" />
+                android:id="@+id/nB_PauseInterval" />
         </LinearLayout>
 
         <LinearLayout
