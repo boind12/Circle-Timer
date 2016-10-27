@@ -45,6 +45,11 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="20dp"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="106dp">
 
             <TextView
@@ -60,7 +65,13 @@
                 android:layout_width="222dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/nP_WorkInterval" />
+
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"></LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
