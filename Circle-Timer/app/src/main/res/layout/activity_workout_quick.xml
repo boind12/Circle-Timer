@@ -26,11 +26,14 @@
                 android:id="@+id/tV_Rounds"
                 android:textAlignment="center" />
 
-            <TextClock
+            <TextView
+                android:text="60"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textClock"
-                android:textAlignment="center" />
+                android:id="@+id/tV_CountDown"
+                android:textAlignment="center"
+                android:textSize="36sp"
+                android:textStyle="normal|bold" />
 
             <TextView
                 android:text="@string/tV_Message_Prepare"
