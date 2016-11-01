@@ -15,6 +15,7 @@ public class workout_quick extends AppCompatActivity {
     private TextView tV_CountDown;
     private TextView tV_Message;
     private TextView tV_Rounds;
+    private int rounds=1, workinterval=1, pauseinterval=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,6 @@ public class workout_quick extends AppCompatActivity {
         tV_Rounds=(TextView)findViewById(R.id.tV_Rounds);
 
         //Get Data from MainActivity
-        int rounds=1, workinterval=1, pauseinterval=1;
         Intent main_Intent = getIntent();
         Bundle main_Bundle = main_Intent.getExtras();
         rounds= main_Bundle.getInt("QUICK_ROUNDS");
@@ -55,5 +55,30 @@ public class workout_quick extends AppCompatActivity {
         //Apply Variables
         tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
+
+
     }
+
+    public boolean workout_controller()
+    {
+        boolean status=false;
+
+        while(rounds!=0)
+        {
+
+        }
+
+        return status;
+    }
+
+    public boolean workout_workout()
+    {
+        return true;
+    }
+
+    public boolean workout_pause()
+    {
+        return true;
+    }
+
 }
