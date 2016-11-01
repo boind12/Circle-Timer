@@ -25,7 +25,7 @@ public class workout_quick extends AppCompatActivity {
 
         //Get Data from MainActivity
         int rounds=1, workinterval=1, pauseinterval=1;
-        Intent main_Intent = new Intent();
+        Intent main_Intent = getIntent();
         Bundle main_Bundle = main_Intent.getExtras();
         rounds= main_Bundle.getInt("QUICK_ROUNDS");
         workinterval=main_Bundle.getInt("QUICK_WORKINTERVAL");
