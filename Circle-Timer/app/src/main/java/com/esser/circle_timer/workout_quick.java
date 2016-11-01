@@ -16,6 +16,7 @@ public class workout_quick extends AppCompatActivity {
     private TextView tV_Message;
     private TextView tV_Rounds;
     private int rounds=1, workinterval=1, pauseinterval=1;
+    private boolean check=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,24 +62,55 @@ public class workout_quick extends AppCompatActivity {
 
     public boolean workout_controller()
     {
-        boolean status=false;
+        boolean status=false, workout_status=false, pause_status=false;
 
         while(rounds!=0)
         {
-
+            workout_status=workout_workout();
+            check=false;
+            pause_status=workout_pause();
+            check=false;
+            if(workout_status==true && pause_status==true)
+            {
+                rounds-=1;
+                workout_status=false;
+                pause_status=false;
+            }
         }
-
+        status=true;
         return status;
     }
 
     public boolean workout_workout()
     {
-        return true;
+        Timer=new CountDownTimer(workinterval*1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tV_CountDown.setText("" + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                check=true;
+            }
+        }.start();
+        return check;
     }
 
     public boolean workout_pause()
     {
-        return true;
+        Timer=new CountDownTimer(pauseinterval*1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tV_CountDown.setText("" + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                check=true;
+            }
+        }.start();
+        return check;
     }
 
 }
