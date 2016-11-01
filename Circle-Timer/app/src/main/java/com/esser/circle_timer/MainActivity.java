@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startQuickWorkout(view);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
             }
         });
 
@@ -53,13 +54,13 @@ public class MainActivity extends AppCompatActivity
         nP_Rounds=(NumberPicker)findViewById(R.id.nP_Rounds);
         nP_WorkInterval = (NumberPicker)findViewById(R.id.nP_WorkInterval);
         nP_PauseInterval=(NumberPicker)findViewById(R.id.nB_PauseInterval);
-        nP_Rounds.setMinValue(0);
+        nP_Rounds.setMinValue(1);
         nP_Rounds.setMaxValue(20);
         nP_Rounds.setWrapSelectorWheel(false);
-        nP_WorkInterval.setMinValue(0);
+        nP_WorkInterval.setMinValue(1);
         nP_WorkInterval.setMaxValue(240);
         nP_WorkInterval.setWrapSelectorWheel(false);
-        nP_PauseInterval.setMinValue(0);
+        nP_PauseInterval.setMinValue(1);
         nP_PauseInterval.setMaxValue(120);
         nP_PauseInterval.setWrapSelectorWheel(false);
     }
@@ -123,7 +124,10 @@ public class MainActivity extends AppCompatActivity
 
     public void startQuickWorkout(View view)
     {
+        int quick_rounds=1, quick_workinterval=1, quick_pauseinterval=1;
         Intent quick_intent = new Intent(this, workout_quick.class);
+        Bundle quick_parameters = new Bundle();
+        quick_intent.putExtras(quick_parameters);
         startActivity(quick_intent);
     }
 }
