@@ -56,7 +56,7 @@ public class workout_quick extends AppCompatActivity {
         //Apply Variables
         tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
-
+        //workout_controller();
 
     }
 
@@ -67,6 +67,8 @@ public class workout_quick extends AppCompatActivity {
         while(rounds!=0)
         {
             workout_status=workout_workout();
+            while(check==false)
+            {}
             check=false;
             pause_status=workout_pause();
             check=false;
