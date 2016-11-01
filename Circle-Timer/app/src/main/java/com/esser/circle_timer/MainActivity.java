@@ -124,9 +124,23 @@ public class MainActivity extends AppCompatActivity
 
     public void startQuickWorkout(View view)
     {
+        //Declare Variables
         int quick_rounds=1, quick_workinterval=1, quick_pauseinterval=1;
+        nP_Rounds=(NumberPicker)findViewById(R.id.nP_Rounds);
+        nP_WorkInterval = (NumberPicker)findViewById(R.id.nP_WorkInterval);
+        nP_PauseInterval=(NumberPicker)findViewById(R.id.nB_PauseInterval);
+
+        //Get Parameters
+        quick_rounds=nP_Rounds.getValue();
+        quick_workinterval=nP_WorkInterval.getValue();
+        quick_pauseinterval=nP_PauseInterval.getValue();
+
+        //Call new Intent
         Intent quick_intent = new Intent(this, workout_quick.class);
         Bundle quick_parameters = new Bundle();
+        quick_parameters.putInt("QUICK_ROUNDS", quick_rounds);
+        quick_parameters.putInt("QUICK_WORKINTERVAL", quick_workinterval);
+        quick_parameters.putInt("QUICK_PAUSEINTERVAL", quick_pauseinterval);
         quick_intent.putExtras(quick_parameters);
         startActivity(quick_intent);
     }
