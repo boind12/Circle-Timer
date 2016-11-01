@@ -20,10 +20,10 @@
             android:layout_height="259dp">
 
             <TextView
-                android:text="TextView"
+                android:text="10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tV_Title"
+                android:id="@+id/tV_Rounds"
                 android:textAlignment="center" />
 
             <TextClock
@@ -31,6 +31,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textClock"
                 android:textAlignment="center" />
+
+            <TextView
+                android:text="@string/tV_Message_Prepare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tV_Message"
+                android:textAlignment="center"/>
         </LinearLayout>
 
         <LinearLayout

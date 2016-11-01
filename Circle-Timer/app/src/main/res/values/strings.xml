@@ -9,4 +9,7 @@
     <string name="tV_Rounds">Rounds:</string>
     <string name="tV_IntervallTime">Intervall Time:</string>
     <string name="tV_PauseTime">Pause Time:</string>
+    <string name="tV_Message_Prepare">Prepare yourself!</string>
+    <string name="tV_Message_Go">Go!</string>
+    <string name="tV_Message_Rest">Rest</string>
 </resources>
