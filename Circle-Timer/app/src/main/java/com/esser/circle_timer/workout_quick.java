@@ -14,6 +14,7 @@ public class workout_quick extends AppCompatActivity {
     private CountDownTimer Timer;
     private TextView tV_CountDown;
     private TextView tV_Message;
+    private TextView tV_Rounds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class workout_quick extends AppCompatActivity {
 
         //Apply Variables
         tV_CountDown=(TextView)findViewById(R.id.tV_CountDown);
+        tV_Rounds=(TextView)findViewById(R.id.tV_Rounds);
 
         //Get Data from MainActivity
         int rounds=1, workinterval=1, pauseinterval=1;
@@ -30,6 +32,9 @@ public class workout_quick extends AppCompatActivity {
         rounds= main_Bundle.getInt("QUICK_ROUNDS");
         workinterval=main_Bundle.getInt("QUICK_WORKINTERVAL");
         pauseinterval=main_Bundle.getInt("QUICK_PAUSEINTERVAL");
+
+        //Set Round Time
+        tV_Rounds.setText(String.valueOf(rounds));
 
         //Start Timer
         Timer = new CountDownTimer(5000,1000) {
@@ -48,7 +53,7 @@ public class workout_quick extends AppCompatActivity {
     public void working_out()
     {
         //Apply Variables
-        tV_Message=(TextView)findViewById(R.id.tV_Rounds);
+        tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
     }
 }
