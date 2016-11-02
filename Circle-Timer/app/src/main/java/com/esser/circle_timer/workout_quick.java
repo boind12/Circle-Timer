@@ -16,7 +16,7 @@ public class workout_quick extends AppCompatActivity {
     private TextView tV_Message;
     private TextView tV_Rounds;
     private int rounds=1, workinterval=1, pauseinterval=1;
-    private boolean check=false;
+    private boolean pause=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,63 @@ public class workout_quick extends AppCompatActivity {
         tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
         //workout_controller();
+        Timer=new CountDownTimer(workinterval*1000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tV_CountDown.setText("" + millisUntilFinished / 1000);
+            }
 
+            @Override
+            public void onFinish() {
+                if(rounds>0)
+                {
+                    tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
+                    timer(pauseinterval*1000);
+                }
+                else
+                {
+
+                }
+            }
+        }.start();
+    }
+
+    public void timer(int time)
+    {
+        Timer=new CountDownTimer(time,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tV_CountDown.setText("" + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                if(rounds>0)
+                {
+                    if(pause==false)
+                    {
+                        pause=true;
+                        rounds-=1;
+                        tV_Rounds.setText(String.valueOf(rounds));
+                        tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
+                        timer(pauseinterval*1000);
+                    }
+                    else
+                    {
+                        pause=false;
+                        rounds-=1;
+                        tV_Rounds.setText(String.valueOf(rounds));
+                        tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
+                        timer(workinterval*1000);
+                    }
+                }
+                else
+                {
+                    tV_Message.setText(getResources().getString(R.string.tV_Message_Finish));
+                    tV_Rounds.setText("0");
+                    tV_CountDown.setText("0");
+                }
+            }
+        }.start();
     }
 }
