@@ -68,6 +68,7 @@ public class workout_quick extends AppCompatActivity {
                 if(rounds>0)
                 {
                     tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
+                    tV_CountDown.setText(""+pauseinterval*1000);
                     timer(pauseinterval*1000);
                 }
                 else
@@ -93,9 +94,8 @@ public class workout_quick extends AppCompatActivity {
                     if(pause==false)
                     {
                         pause=true;
-                        rounds-=1;
-                        tV_Rounds.setText(String.valueOf(rounds));
                         tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
+                        tV_CountDown.setText(""+pauseinterval*1000);
                         timer(pauseinterval*1000);
                     }
                     else
@@ -104,6 +104,7 @@ public class workout_quick extends AppCompatActivity {
                         rounds-=1;
                         tV_Rounds.setText(String.valueOf(rounds));
                         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
+                        tV_CountDown.setText(""+workinterval*1000);
                         timer(workinterval*1000);
                     }
                 }
