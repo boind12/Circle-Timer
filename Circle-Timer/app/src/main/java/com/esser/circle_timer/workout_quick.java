@@ -89,7 +89,7 @@ public class workout_quick extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                if(rounds>0)
+                if(rounds>1)
                 {
                     if(pause==false)
                     {
