@@ -9,10 +9,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.esser.circle_timer.workout_quick">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -24,7 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_Rounds"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="36sp" />
 
             <TextView
                 android:text="60"
@@ -32,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_CountDown"
                 android:textAlignment="center"
-                android:textSize="36sp"
+                android:textSize="64sp"
                 android:textStyle="normal|bold" />
 
             <TextView
@@ -40,7 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tV_Message"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textSize="36sp" />
         </LinearLayout>
 
         <LinearLayout
