@@ -1,6 +1,7 @@
 package com.esser.circle_timer;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ public class workout_quick extends AppCompatActivity {
     private TextView tV_CountDown;
     private TextView tV_Message;
     private TextView tV_Rounds;
+    private MediaPlayer beeper;
     private int rounds=1, workinterval=1, pauseinterval=1;
     private boolean pause=true;
 
@@ -24,6 +26,7 @@ public class workout_quick extends AppCompatActivity {
         setContentView(R.layout.activity_workout_quick);
 
         //Apply Variables
+        beeper = MediaPlayer.create(this, R.raw.beep);
         tV_CountDown=(TextView)findViewById(R.id.tV_CountDown);
         tV_Rounds=(TextView)findViewById(R.id.tV_Rounds);
 
@@ -42,6 +45,10 @@ public class workout_quick extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 tV_CountDown.setText("" + ((millisUntilFinished / 1000)));
+                if(millisUntilFinished<4000)
+                {
+                    beeper.start();
+                }
             }
 
             @Override
@@ -58,10 +65,14 @@ public class workout_quick extends AppCompatActivity {
         //Apply Variables
         tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
-        Timer=new CountDownTimer(workinterval*1000,1000) {
+        Timer=new CountDownTimer((workinterval*1000)+1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 tV_CountDown.setText("" + millisUntilFinished / 1000);
+                if(millisUntilFinished<4000)
+                {
+                    beeper.start();
+                }
             }
 
             @Override
@@ -84,10 +95,14 @@ public class workout_quick extends AppCompatActivity {
 
     public void timer(int time)
     {
-        Timer=new CountDownTimer(time,1000) {
+        Timer=new CountDownTimer(time+1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 tV_CountDown.setText("" + millisUntilFinished / 1000);
+                if(millisUntilFinished<4000)
+                {
+                    beeper.start();
+                }
             }
 
             @Override
