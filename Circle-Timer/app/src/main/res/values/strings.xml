@@ -5,11 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    //Strings for Main Activity
+    //Strings for MainActivity
     <string name="tV_Rounds">Rounds:</string>
     <string name="tV_IntervallTime">Intervall Time:</string>
     <string name="tV_PauseTime">Pause Time:</string>
+
+    //Strings for workout_quick
     <string name="tV_Message_Prepare">Prepare yourself!</string>
     <string name="tV_Message_Go">Go!</string>
     <string name="tV_Message_Rest">Rest</string>
+    <string name="tV_Message_Finish">Finish!!!</string>
 </resources>
