@@ -38,14 +38,16 @@ public class workout_quick extends AppCompatActivity {
         tV_Rounds.setText(String.valueOf(rounds));
 
         //Start Timer
-        Timer = new CountDownTimer(5000,1000) {
+        Timer = new CountDownTimer(6000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                tV_CountDown.setText("" + millisUntilFinished / 1000);
+                tV_CountDown.setText("" + ((millisUntilFinished / 1000)));
             }
 
             @Override
-            public void onFinish() {
+            public void onFinish()
+            {
+                tV_CountDown.setText("0");
                 working_out();
             }
         }.start();
@@ -56,7 +58,6 @@ public class workout_quick extends AppCompatActivity {
         //Apply Variables
         tV_Message=(TextView)findViewById(R.id.tV_Message);
         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
-        //workout_controller();
         Timer=new CountDownTimer(workinterval*1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -65,15 +66,17 @@ public class workout_quick extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                if(rounds>0)
+                if(rounds>1)
                 {
                     tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
-                    tV_CountDown.setText(""+pauseinterval*1000);
+                    tV_CountDown.setText(""+pauseinterval);
                     timer(pauseinterval*1000);
                 }
                 else
                 {
-
+                    tV_Message.setText(getResources().getString(R.string.tV_Message_Finish));
+                    tV_Rounds.setText("0");
+                    tV_CountDown.setText("0");
                 }
             }
         }.start();
@@ -95,7 +98,7 @@ public class workout_quick extends AppCompatActivity {
                     {
                         pause=true;
                         tV_Message.setText(getResources().getString(R.string.tV_Message_Rest));
-                        tV_CountDown.setText(""+pauseinterval*1000);
+                        tV_CountDown.setText(""+pauseinterval);
                         timer(pauseinterval*1000);
                     }
                     else
@@ -104,7 +107,7 @@ public class workout_quick extends AppCompatActivity {
                         rounds-=1;
                         tV_Rounds.setText(String.valueOf(rounds));
                         tV_Message.setText(getResources().getString(R.string.tV_Message_Go));
-                        tV_CountDown.setText(""+workinterval*1000);
+                        tV_CountDown.setText(""+workinterval);
                         timer(workinterval*1000);
                     }
                 }
